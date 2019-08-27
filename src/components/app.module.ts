@@ -10,6 +10,7 @@ import { MovieTitleComponent } from './movie-title/movie-title.component';
 import { GameOverComponent } from './game-over/game-over.component';
 import { KeyComponent } from './key/key.component';
 import { LetterComponent } from './letter/letter.component';
+import { WordComponent } from './word/word.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { LetterComponent } from './letter/letter.component';
     MovieTitleComponent,
     GameOverComponent,
     KeyComponent,
-    LetterComponent
+    LetterComponent,
+    WordComponent
   ],
   imports: [
     BrowserModule

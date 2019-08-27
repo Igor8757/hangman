@@ -1,0 +1,10 @@
+.word-box {
+    list-style-type: none;
+    display: inline;
+
+}
+
+.letter {
+    display: inline;
+    padding: 5px;
+}
