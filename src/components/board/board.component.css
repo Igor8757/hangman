@@ -1,0 +1,10 @@
+.board {
+    text-align: center;
+    border: 10px black;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
+    height: 800px;
+    margin-top: 15px;
+    background-color: aquamarine
+}
