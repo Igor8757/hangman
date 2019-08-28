@@ -1,14 +1,15 @@
-<div class="letter-box"  [ngSwitch]="letterState">
-    <span *ngSwitchCase="0">
+<div class="letter-box">
+    <span *ngIf="isHidden">
         <div>
         </div> 
         <img src="../../assets/Rectangle.png">
     </span>
-    <span *ngSwitchCase="1">
+    <span *ngIf="!isHidden">
             <div>
                 <h2>{{letter}}</h2>
             </div> 
             <img src="../../assets/Rectangle.png">
-        </span>
+    </span>
+
 </div>
 

@@ -1,5 +1,5 @@
 <span>
     <ul class="word-box">
-        <li class="letter" *ngFor="let letter of word.split('')"><app-letter [letter]="letter" [letterStates]="letterStates"></app-letter></li>
+        <li class="letter" *ngFor="let letter of word.split('')"><app-letter [letter]="letter" [hiddenLetters]="hiddenLetters"></app-letter></li>
     </ul>
     </span>

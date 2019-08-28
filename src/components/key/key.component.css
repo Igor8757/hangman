@@ -1,6 +1,6 @@
 button {
-    background-color: rgb(168, 168, 168);
-    border: none;
+    border: 1px solid  #566cd1;
+    background-color:#63cef8;    
     color: black;
     padding: 20px;
     text-align: center;
@@ -16,11 +16,21 @@ button {
 }
 
 button:hover {
-    background-color: rgb(105, 105, 105);
+    border: 1px solid  #566cd1;
+    background-color:#53afd3;  
 
 }
 
 button:active {
-    background-color: rgb(59, 59, 59);
+    border: 1px solid  #566cd1;
+    background-color:#3f86a1;  
+}
+
+button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+  cursor: pointer;
 
 }

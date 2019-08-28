@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Letter, letterState, getState } from 'src/gameGenerator';
 
 @Component({
   selector: 'app-letter',
@@ -8,14 +7,14 @@ import { Letter, letterState, getState } from 'src/gameGenerator';
 })
 export class LetterComponent implements OnInit {
   @Input() letter: string;
-  @Input() letterStates: Array<Letter>;
-  public letterState: letterState;
+  @Input() hiddenLetters: Array<string>;
+  public isHidden: boolean;
   constructor() { 
     
   }
 
   ngOnInit() {
-    this.letterState = getState(this.letter, this.letterStates)
+    this.isHidden = this.hiddenLetters.includes(this.letter);
   }
 
 }

@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Letter } from 'src/gameGenerator';
 
 @Component({
   selector: 'app-word',
@@ -8,7 +7,7 @@ import { Letter } from 'src/gameGenerator';
 })
 export class WordComponent implements OnInit {
   @Input() word: string;
-  @Input() letterStates: Array<Letter>;
+  @Input() hiddenLetters: Array<string>;
   constructor() { }
 
   ngOnInit() {

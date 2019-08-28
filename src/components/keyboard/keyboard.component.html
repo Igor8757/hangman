@@ -1,5 +1,5 @@
 <div>
         <ul class="keyboard-box">
-            <li class="key" *ngFor="let key of keys"><app-key [key]="key"></app-key></li>
+            <li class="key" *ngFor="let key of keys"><app-key [key]="key" [hiddenLetters]="gameState.hiddenLetters" [titleLetters]="gameState.title.split('')" (pressed)=onPress($event)></app-key></li>
         </ul>
     </div>
