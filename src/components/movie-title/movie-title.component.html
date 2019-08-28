@@ -1,5 +1,5 @@
 <div class="movie-title">
     <ul class="title-box">
-        <li class="word" *ngFor="let word of gameState.title.split(' ')"><app-word [word]="word"></app-word></li>
+        <li class="word" *ngFor="let word of gameState.title.split(' ')"><app-word [word]="word" [letterStates]="gameState.letters"></app-word></li>
     </ul>
 </div>

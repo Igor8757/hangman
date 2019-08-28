@@ -1,7 +1,14 @@
-<div class="letter-box">
-    <div>
-        <h2>{{letter}}</h2>
-    </div> 
-    <img src="../../assets/Rectangle.png">
+<div class="letter-box"  [ngSwitch]="letterState">
+    <span *ngSwitchCase="0">
+        <div>
+        </div> 
+        <img src="../../assets/Rectangle.png">
+    </span>
+    <span *ngSwitchCase="1">
+            <div>
+                <h2>{{letter}}</h2>
+            </div> 
+            <img src="../../assets/Rectangle.png">
+        </span>
 </div>
 

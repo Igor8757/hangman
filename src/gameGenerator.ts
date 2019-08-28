@@ -12,10 +12,10 @@ export enum letterState {
 }
 
 export class Letter {
-    letter: string;
+    value: string;
     state: letterState;
     constructor(letter){
-        this.letter = letter;
+        this.value = letter;
         this.state = letterState.HIDDEN;
     }
 }
@@ -27,15 +27,46 @@ export class GameState {
     constructor(title){
         this.title = title;
         this.lives = 6;
-        this.letters = abc.map((letter: string) => new Letter(letter));
+        this.letters = []
+        abc.forEach(element => {
+            this.letters.push(new Letter(element))
+        });
     }
+}
+
+export const getState = (value, states) => {
+    console.log(value)
+    console.log(states)
+    let res = null;
+    states.forEach(element => {
+        if(element.value == value)
+            res = element.state;
+    });
+    console.log(res)
+    return res;
+}
+
+const revealLetters = (left: number) => {
+    if(left == 0) return;
+    let randy = Math.floor(Math.random() * gameState.letters.length);
+    if(gameState.letters[randy].state == letterState.HIDDEN){
+        gameState.letters[randy].state = letterState.INIT_REVEALED
+        revealLetters(left - 1)
+    }
+
+}
+
+const initTitle = () =>{
+    let revealables = gameState.title.replace(' ', '').length / 4;
+    revealLetters(revealables)
 }
 
 
 export const generateGame = () => {
     let movies = movies_json.default
     let movie = movies[Math.floor(Math.random() * movies.length)].title.toUpperCase();
-    let gameState = new GameState(movie);
+    gameState = new GameState(movie);
+    initTitle();
     console.log(gameState)
     return gameState;
 };
