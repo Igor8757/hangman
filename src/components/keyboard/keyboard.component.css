@@ -1,0 +1,13 @@
+.keyboard-box {
+    display: flex;
+    flex-wrap:wrap;
+    margin:2px;
+    justify-content:center;
+}
+
+
+.key {
+    display: inline;
+    flex: 0 1 calc(15% - 1rem); /*disable the flex-grow*/
+}
+

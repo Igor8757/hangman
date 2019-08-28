@@ -6,12 +6,10 @@
     width: 1000px;
     height: 800px;
     margin-top: 15px;
-    background-color: aquamarine
 }
 
 .hang-guy {
     margin: 0 auto;  
-    background-color: bisque;
     float: left;
     padding-left: 20px;
 

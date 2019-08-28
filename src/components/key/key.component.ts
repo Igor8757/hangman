@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-key',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./key.component.css']
 })
 export class KeyComponent implements OnInit {
-
+  @Input() key: string;
   constructor() { }
 
   ngOnInit() {

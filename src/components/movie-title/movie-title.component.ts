@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { GameState } from 'src/gameGenerator';
 
 @Component({
   selector: 'app-movie-title',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./movie-title.component.css']
 })
 export class MovieTitleComponent implements OnInit {
-
+  @Input() gameState: GameState;
   constructor() { }
 
   ngOnInit() {

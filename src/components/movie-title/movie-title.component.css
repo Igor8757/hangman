@@ -1,7 +1,18 @@
+.movie-title {
+    height: 300px;
+}
+
 .title-box {
-    display: grid;
+    display: inline;
     grid-column-gap: 10px;
     grid-row-gap: 10px;
     justify-content: center;
+    list-style-type: none;
+}
+
+
+.word {
+    display: inline;
+    padding: 5px;
 }
 

@@ -1,0 +1,26 @@
+button {
+    background-color: rgb(168, 168, 168);
+    border: none;
+    color: black;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    margin: 4px 4px;
+    height: 60px;
+    width: 60px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+button:hover {
+    background-color: rgb(105, 105, 105);
+
+}
+
+button:active {
+    background-color: rgb(59, 59, 59);
+
+}

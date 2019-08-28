@@ -1,4 +1,8 @@
 .letter-box {
-    background-color: blue;
-    height: 70px;
+    display: inline-block;
+
+}
+
+h2 {
+    display: inline;
 }

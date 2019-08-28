@@ -2,8 +2,8 @@
  <div>
     <h1>board</h1>
     <app-hang-image class="hang-guy"></app-hang-image>
-    <app-movie-title></app-movie-title>
-
+    <app-movie-title [gameState]="gameState"></app-movie-title>
+   {{gameState.title}}
  </div>
  <div>
     <app-keyboard></app-keyboard>

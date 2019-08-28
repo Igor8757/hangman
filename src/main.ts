@@ -5,7 +5,7 @@ import { AppModule } from './components/app.module';
 import { environment } from './environments/environment';
 import { generateGame } from './gameGenerator'
 
-generateGame();
+//generateGame();
 
 if (environment.production) {
   enableProdMode();
