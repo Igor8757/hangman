@@ -1,10 +1,10 @@
 <div class="board">
  <div>
     <app-hang-image class="hang-guy"></app-hang-image>
-    <app-movie-title [gameState]="gameState"></app-movie-title>
+    <app-movie-title [gameState]="gameState" #mt></app-movie-title>
    {{gameState.title}}
  </div>
  <div>
-    <app-keyboard [gameState]="gameState"></app-keyboard>
+    <app-keyboard [gameState]="gameState" (keyPressed)=onKeyPress($event)></app-keyboard>
  </div>
 </div>

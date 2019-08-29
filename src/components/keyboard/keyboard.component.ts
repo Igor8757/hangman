@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { GameState } from 'src/gameGenerator';
 
 @Component({
@@ -8,6 +8,7 @@ import { GameState } from 'src/gameGenerator';
 })
 export class KeyboardComponent implements OnInit {
   @Input() gameState: GameState;
+  @Output() keyPressed = new EventEmitter<string>();
   public keys: Array<string> = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
   constructor() { }
 
@@ -15,6 +16,6 @@ export class KeyboardComponent implements OnInit {
   }
 
   onPress(key: string){
-    console.log(key);
+    this.keyPressed.emit(key);
   }
 }

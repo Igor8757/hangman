@@ -1,9 +1,10 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-word',
   templateUrl: './word.component.html',
-  styleUrls: ['./word.component.css']
+  styleUrls: ['./word.component.css'],
+  changeDetection: ChangeDetectionStrategy.Default
 })
 export class WordComponent implements OnInit {
   @Input() word: string;

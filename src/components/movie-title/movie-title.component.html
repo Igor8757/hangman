@@ -2,4 +2,5 @@
     <ul class="title-box">
         <li class="word" *ngFor="let word of gameState.title.split(' ')"><app-word [word]="word" [hiddenLetters]="gameState.hiddenLetters"></app-word></li>
     </ul>
+    {{gameState.hiddenLetters}}
 </div>

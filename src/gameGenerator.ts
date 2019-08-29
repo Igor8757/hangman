@@ -1,7 +1,16 @@
 import * as movies_json from './movies.json';
 
+/*
+*
+TODOS:
 
-let abc: Array<string> = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+2 . Make letters reveal - follow https://angular.io/guide/component-interaction#parent-and-children-communicate-via-a-service
+3 . Enable image changes on the hangman + implement lives mechanism
+4 . Add the score screen.
+5 . Fix words sliding over to next line (hard)
+*/
+
+
 
 export let gameState: GameState;
 
@@ -14,7 +23,21 @@ export class GameState {
         this.lives = 6;
         this.hiddenLetters = <Array<string>>[... new Set(title.split(' ').join('').split(''))];
     }
+
+   
 }
+
+export const revealLetter = (key: string) => {
+    let res = [...gameState.hiddenLetters];
+    for( var i = 0; i < res.length; i++){ 
+        if ( res[i] == key ) {
+            res.splice(i, 1); 
+        }
+    }
+    console.log(res)
+    return res;
+}
+
 
 const initTitle = () =>{
     let toReveal = Math.round(gameState.title.replace(' ', '').length / 4);
