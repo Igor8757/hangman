@@ -22,4 +22,8 @@ export class GameOverComponent implements OnInit, OnChanges {
 
   }
 
+  againClick(){
+    location.reload();
+  }
+
 }

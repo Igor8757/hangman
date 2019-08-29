@@ -1,6 +1,12 @@
 <div *ngIf="this.gameState.isWin">
-        <img  src="../../assets/yes_symbol.png">
+    <div>
+            <img  src="../../assets/yes_symbol.png">
+    </div>
+        <input type="image" src="../../assets/again.png" alt="Submit" (click)="againClick()">
 </div>
 <div *ngIf="this.gameState.isLoss">
-        <img  src="../../assets/shit_symbol.png">
+    <div>
+            <img  src="../../assets/shit_symbol.png">
+    </div>
+        <input type="image" src="../../assets/again.png" alt="Submit" (click)="againClick()">
 </div>
