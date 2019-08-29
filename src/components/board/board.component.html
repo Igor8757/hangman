@@ -1,9 +1,11 @@
 <div class="board">
  <div>
+      <app-game-over class="game-over" [gameState]="gameState" ></app-game-over>
     <app-hang-image class="hang-guy" [lives]="gameState.lives"></app-hang-image>
     <app-movie-title [gameState]="gameState"></app-movie-title>
    {{gameState.title}}
  </div>
+
  <div>
     <app-keyboard [gameState]="gameState" (keyPressed)=onKeyPress($event)></app-keyboard>
  </div>

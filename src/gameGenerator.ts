@@ -1,39 +1,33 @@
 import * as movies_json from './movies.json';
 
-/*
-*
-TODOS:
-
-3 . Enable image changes on the hangman + implement lives mechanism
-4 . Add the score screen.
-5 . Fix words sliding over to next line (hard)
-*/
-
-
-
 export let gameState: GameState;
 
 export class GameState {
     title: string;
     lives: number;
     hiddenLetters: Array<string>;
+    isWin: boolean;
+    isLoss: boolean
     constructor(title){
         this.title = title;
         this.lives = 6;
         this.hiddenLetters = <Array<string>>[... new Set(title.split(' ').join('').split(''))];
+        this.isLoss =  this.lives == 0
+        this.isWin = this.hiddenLetters.length == 0;
     }
 
    
 }
 
 export const revealLetter = (key: string) => {
+    if(gameState.isWin || gameState.isLoss) return gameState.hiddenLetters;
     let res = [...gameState.hiddenLetters];
     for( var i = 0; i < res.length; i++){ 
         if ( res[i] == key ) {
             res.splice(i, 1); 
         }
     }
-    console.log(res)
+    console.log(gameState)
     return res;
 }
 
@@ -57,10 +51,7 @@ export const generateGame = () => {
     let movies = movies_json.default
     let movie = movies[Math.floor(Math.random() * movies.length)].title.toUpperCase();
     gameState = new GameState(movie);
-    console.log(gameState.hiddenLetters)
     initTitle();
-    console.log(gameState.hiddenLetters)
-
     console.log(gameState)
     return gameState;
 };

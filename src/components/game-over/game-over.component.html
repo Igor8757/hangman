@@ -1,1 +1,6 @@
-<p>game-over works!</p>
+<div *ngIf="this.gameState.isWin">
+        <img  src="../../assets/yes_symbol.png">
+</div>
+<div *ngIf="this.gameState.isLoss">
+        <img  src="../../assets/shit_symbol.png">
+</div>

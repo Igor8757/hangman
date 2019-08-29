@@ -16,9 +16,13 @@ export class BoardComponent implements OnInit, OnChanges {
   ngOnInit() {
   }
 
-  onKeyPress(key: string){   
-    if(!this.gameState.hiddenLetters.includes(key)) this.gameState.lives=Math.max(0, this.gameState.lives - 1);
-    this._ngZone.run(() => this.gameState.hiddenLetters = [...revealLetter(key)]);   
+  onKeyPress(key: string){
+    this._ngZone.run(() => {
+      if(!this.gameState.hiddenLetters.includes(key)) this.gameState.lives=Math.max(0, this.gameState.lives - 1);
+      this.gameState.hiddenLetters = [...revealLetter(key)];   
+      this.gameState.isLoss =  this.gameState.lives == 0
+      this.gameState.isWin = this.gameState.hiddenLetters.length == 0;
+    })
   }
 
   ngOnChanges(changes: SimpleChanges): void {

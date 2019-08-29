@@ -7,6 +7,9 @@ import { Component, OnInit, Input, Output, EventEmitter  } from '@angular/core';
 })
 export class KeyComponent implements OnInit {
   @Input() key: string;
+  @Input() isWin: boolean;
+  @Input() isLoss: boolean;
+
   @Input() hiddenLetters: Array<string>;
   @Input() titleLetters: Array<string>;
   @Output() pressed = new EventEmitter<string>();
@@ -14,13 +17,14 @@ export class KeyComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.disableButton = !this.hiddenLetters.includes(this.key) && this.titleLetters.includes(this.key);
+    this.disableButton =(!this.hiddenLetters.includes(this.key) && this.titleLetters.includes(this.key));
 
   }
 
   keyClick(){
     this.pressed.emit(this.key)
-    this.disableButton = true;
+    if (!this.isWin && !this.isLoss)
+      this.disableButton = true;
   }
 
 }
