@@ -1,1 +1,7 @@
-<img src="../../assets/Hangman 1.png">
+<img *ngIf="lives == 6" src="../../assets/Hangman 1.png">
+<img *ngIf="lives == 5" src="../../assets/Hangman 2.png">
+<img *ngIf="lives == 4" src="../../assets/Hangman 3.png">
+<img *ngIf="lives == 3" src="../../assets/Hangman 4.png">
+<img *ngIf="lives == 2" src="../../assets/Hangman 5.png">
+<img *ngIf="lives == 1" src="../../assets/Hangman 6.png">
+<img *ngIf="lives == 0" src="../../assets/Hangman 7.png">

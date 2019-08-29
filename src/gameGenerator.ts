@@ -4,7 +4,6 @@ import * as movies_json from './movies.json';
 *
 TODOS:
 
-2 . Make letters reveal - follow https://angular.io/guide/component-interaction#parent-and-children-communicate-via-a-service
 3 . Enable image changes on the hangman + implement lives mechanism
 4 . Add the score screen.
 5 . Fix words sliding over to next line (hard)

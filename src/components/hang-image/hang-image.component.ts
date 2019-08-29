@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-hang-image',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./hang-image.component.css']
 })
 export class HangImageComponent implements OnInit {
-
+  @Input() lives: number;
   constructor() { }
 
   ngOnInit() {

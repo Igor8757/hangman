@@ -1,14 +1,11 @@
-import { Component, OnInit, Input, ChangeDetectorRef, ChangeDetectionStrategy, NgZone, SimpleChanges, OnChanges } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Component, OnInit, Input, ChangeDetectionStrategy, NgZone, SimpleChanges, OnChanges } from '@angular/core';
 import { GameState, revealLetter } from 'src/gameGenerator';
-import { BoardService } from './board.service';
 
 @Component({
   selector: 'app-board',
   templateUrl: './board.component.html',
   styleUrls: ['./board.component.css'],
-  changeDetection: ChangeDetectionStrategy.Default,
-  providers: [BoardService]
+  changeDetection: ChangeDetectionStrategy.Default
 })
 
 export class BoardComponent implements OnInit, OnChanges {
@@ -20,6 +17,7 @@ export class BoardComponent implements OnInit, OnChanges {
   }
 
   onKeyPress(key: string){   
+    if(!this.gameState.hiddenLetters.includes(key)) this.gameState.lives=Math.max(0, this.gameState.lives - 1);
     this._ngZone.run(() => this.gameState.hiddenLetters = [...revealLetter(key)]);   
   }
 

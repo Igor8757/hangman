@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectionStrategy, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'app-letter',
@@ -6,7 +6,7 @@ import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core
   styleUrls: ['./letter.component.css'],
   changeDetection: ChangeDetectionStrategy.Default
 })
-export class LetterComponent implements OnInit {
+export class LetterComponent implements OnInit, OnChanges {
   @Input() letter: string;
   @Input() hiddenLetters: Array<string>;
   public isHidden: boolean;
@@ -15,6 +15,10 @@ export class LetterComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.isHidden = this.hiddenLetters.includes(this.letter);
+  }
+
+  ngOnChanges() {
     this.isHidden = this.hiddenLetters.includes(this.letter);
   }
 
