@@ -7,13 +7,15 @@ export class GameState {
     lives: number;
     hiddenLetters: Array<string>;
     isWin: boolean;
-    isLoss: boolean
+    isLoss: boolean;
+    timeLeft: number;
     constructor(title){
         this.title = title;
         this.lives = 6;
         this.hiddenLetters = <Array<string>>[... new Set(title.split(' ').join('').split(''))];
         this.isLoss =  this.lives == 0
         this.isWin = this.hiddenLetters.length == 0;
+        this.timeLeft = 30;
     }
 
    
@@ -24,7 +26,8 @@ export const revealLetter = (key: string) => {
     let res = [...gameState.hiddenLetters];
     for( var i = 0; i < res.length; i++){ 
         if ( res[i] == key ) {
-            res.splice(i, 1); 
+            res.splice(i, 1);
+            gameState.timeLeft += 10;
         }
     }
     console.log(gameState)

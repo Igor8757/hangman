@@ -11,6 +11,7 @@ import { GameOverComponent } from './game-over/game-over.component';
 import { KeyComponent } from './key/key.component';
 import { LetterComponent } from './letter/letter.component';
 import { WordComponent } from './word/word.component';
+import { TimerComponent } from './timer/timer.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { WordComponent } from './word/word.component';
     GameOverComponent,
     KeyComponent,
     LetterComponent,
-    WordComponent
+    WordComponent,
+    TimerComponent
   ],
   imports: [
     BrowserModule
